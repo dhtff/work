@@ -1,0 +1,73 @@
+﻿/* ממקם את הטופס למעלה ובמרכז */
+body {
+    direction: rtl; /* כותב את הטקסט מימין לשמאל */
+    display: flex; /* מאפשר פריסה גמישה – נשתמש בזה כדי למרכז את התוכן */
+    justify-content: center; /* מרכז את האלמנט האופקי */
+    align-items: flex-start; /* מיישר את האלמנט לראש הדף (למעלה) */
+    height: 100vh; /* גובה המסך המלא */
+    margin: 0; /* ביטול רווחים חיצוניים של הדפדפן */
+}
+
+/* עיצוב הקופסה הלבנה של הטופס */
+table {
+    background-color: white; /* רקע לבן לטופס */
+    padding: 20px; /* ריווח פנימי */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל עדין לקופסה */
+}
+
+/* מצמיד את התוויות לשדות */
+td {
+    padding: 8px; /* ריווח פנימי בתוך כל תא */
+    text-align: right; /* יישור לשמאל – כדי שהתוויות יהיו בצד של השדות */
+    white-space: nowrap; /* מונע מהטקסט להישבר לשורה חדשה */
+}
+
+/* עיצוב שדות הטופס */
+input {
+    margin-left: 10px; /* מרווח קטן בין השדה לתווית */
+    padding: 5px; /* ריווח פנימי לשדה */
+    border: 1px solid #ccc; /* מסגרת אפורה בהירה */
+    border-radius: 5px; /* פינות מעוגלות */
+}
+
+.error {
+    color: red; /* צבע אדום בלבד */
+
+    max-width: 25ch; /* שובר שורה אחרי בערך 25 תווים */
+    
+}
+
+/* מרכז את הכפתורים מתחת לטופס */
+.form-container {
+    text-align: center; /* ממרכז את התוכן שבתוך הקונטיינר */
+    margin-top: 10px; /* רווח מלמעלה */     
+}
+
+/* עיצוב כפתור מסוג "button" – כנראה כפתור שליחה */
+button[type="button"] {
+    background-color: green; /* רקע ירוק */
+    color: white; /* טקסט לבן */
+    padding: 10px 15px; /* ריווח פנימי */
+    border: none; /* בלי מסגרת */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+/* עיצוב כפתור איפוס */
+button[type="reset"] {
+    background-color: red; /* רקע אדום */
+    color: white; /* טקסט לבן */
+    padding: 10px 15px; /* ריווח פנימי */
+    border: none; /* בלי מסגרת */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן עכבר בצורת יד */
+    font-weight: bold; /* טקסט מודגש */
+}
+
+/* עיצוב כללי עבור hover לכל הכפתורים */
+button:hover {
+    opacity: 0.9; /* אפקט קטן של כהות בעת מעבר עכבר */
+}
+

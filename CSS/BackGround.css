@@ -1,0 +1,10 @@
+﻿/* עיצוב של הרקע */
+body {
+    height: 100vh; /* גובה הגוף 100% מהגודל של המסך */
+    padding: 0; /* אפס ריפוד (הסרת רווחים פנימיים) */
+    background-image: url('../Pictures/avatarBG.jpeg'); /* הגדרת התמונה כרקע */
+    background-size: cover; /* התמונה תתאים לגודל המסך ותכסה את כל הרקע */
+    background-position: center; /* מיקום התמונה במרכז הרקע */
+    background-repeat: no-repeat; /* תמונה לא תחזור על עצמה */
+    background-attachment: fixed; /* התמונה נשארת קבועה כאשר הגולל בדף */
+}
