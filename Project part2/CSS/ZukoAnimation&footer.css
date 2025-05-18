@@ -1,0 +1,68 @@
+﻿/* עיצוב כולל לאלמנט ה-footer – אזור התחתית של האתר */
+footer {
+    display: flex; /* מאפשר סידור גמיש של האלמנטים – תמונה + טקסט */
+    justify-content: center; /* מרכז את התוכן לרוחב */
+    align-items: center; /* ממרכז את התוכן גם לגובה */
+    bottom: 0; /* מציב את הפוטר בקצה התחתון */
+    left: 0; /* מיישר לקצה השמאלי (בכיווני LTR) */
+    width: 100%; /* רוחב מלא של המסך */
+    padding: 10px 0; /* ריווח אנכי מעל ומתחת */
+    background: none; /* אין רקע – שקוף */
+    color: white; /* צבע טקסט */
+    font-size: 17px; /* גודל הטקסט */
+    font-weight: bold; /* טקסט מודגש */
+    text-align: center; /* יישור מרכזי לטקסט */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9), -3px -3px 4px rgba(0, 0, 0, 0.7); /* צל כפול לטקסט – מבליט אותו */
+    gap: 3px; /* רווח בין הדמות של זוקו לטקסט (ב-flex) */
+}
+
+/* מיכל של תמונת זוקו – עטיפה חיצונית עבור האנימציה */
+#ZukoAnimation-container {
+    width: 80px;
+    height: 80px;
+    overflow: visible;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+    /* כאשר מצביעים עם העכבר על המיכל – יגדיל אותו מעט */
+    #ZukoAnimation-container:hover {
+        transform: scale(1.1); /* הגדלה קלה – כאילו הוא מגיב */
+    }
+
+/* התמונה עצמה של זוקו */
+#ZukoAnimation {
+    width: 100%; /* תופס את כל רוחב המיכל */
+    height: 100%; /* תופס את כל גובה המיכל */
+    object-fit: contain; /* שומר על היחס בין גובה לרוחב של התמונה */
+}
+
+/* הכדור של האש שיוצא מפה זוקו (או מהחרב) */
+#ZukoAnimation-fire {
+    position: absolute; /* ממוקם יחסית למיכל – כדי למקם אותו ליד הפה */
+    top: 0px; /* אפשר לשנות לפי מיקום הפה בתמונה */
+    left: -5px; /* אותו דבר – כדי להזיז את הכדור לצד */
+    width: 18px; /* גודל הכדור */
+    height: 18px; /* גובה הכדור */
+    background: radial-gradient(circle, orange 30%, red 70%, transparent 100%); /* מעבר צבעים עגול – כמו אש */
+    border-radius: 50%; /* הופך את האלמנט לעיגול */
+    pointer-events: none; /* לא מפריע לאירועי עכבר – שלא "יחסום" hover */
+    display: none; /* מוסתר כברירת מחדל – מוצג רק כשיש ירייה */
+    z-index: 9999; /* מעל כולם – שייראה גם אם דברים אחרים חופפים */
+}
+
+/* אנימציה שמופעלת כשיש ירייה – נקראת עם JavaScript או CSS class */
+@keyframes fire-shoot {
+    0% {
+        transform: scale(0.8) translateX(0); /* התחלה – בגודל קטן, מיקום התחלתי */
+        opacity: 0.9; /* כמעט שקוף */
+    }
+
+    100% {
+        transform: scale(2.5) translateX(-60px); /* סיום – גדל ו"טס" שמאלה */
+        opacity: 0; /* נעלם בהדרגה */
+    }
+}
